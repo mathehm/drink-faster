@@ -9,7 +9,7 @@ useHead({
   title,
   meta: [{
     name: 'description',
-    content: description,
+    content: description
   }]
 })
 </script>
@@ -41,7 +41,7 @@ useHead({
     flex-wrap: wrap;
     gap: 0.5rem;
     padding: 2rem 6rem;
-  
+
     @include breakpoint(small-only) {
       display: grid;
       grid-template-columns: 1fr 1fr;

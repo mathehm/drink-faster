@@ -1,19 +1,19 @@
 <script setup lang="ts">
-const config = useRuntimeConfig()
 import { type DrinkData } from '@/types'
+const config = useRuntimeConfig()
 const route = useRoute()
 const category = route.params.name
 
 const { data: drinksCategory } = await useFetch(`filter.php?c=${category}`, {
   baseURL: config.public.apiBase,
-  transform: (response: DrinkData) => response.drinks,
+  transform: (response: DrinkData) => response.drinks
 })
 
 if (!drinksCategory.value) {
   throw createError({
     statusCode: 404,
     statusMessage: 'Error in the request',
-    fatal: true,
+    fatal: true
   })
 }
 
@@ -24,7 +24,7 @@ useHead({
   title,
   meta: [{
     name: 'description',
-    content: description,
+    content: description
   }]
 })
 </script>

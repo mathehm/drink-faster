@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const config = useRuntimeConfig()
 import type { DrinkFullData, DrinkFull } from 'types'
+const config = useRuntimeConfig()
 const favorite = useFavorite()
 const route = useRoute()
 const id = route.params.id
@@ -9,14 +9,14 @@ const isFavorite = ref(false)
 const { data: itemDrink } = await useFetch(`lookup.php?i=${id}`, {
   baseURL: config.public.apiBase,
   key: id.toString(),
-  transform: (response: DrinkFullData) => response.drinks[0],
+  transform: (response: DrinkFullData) => response.drinks[0]
 })
 
 if (!itemDrink.value) {
   throw createError({
     statusCode: 404,
     statusMessage: 'Error in the request',
-    fatal: true,
+    fatal: true
   })
 }
 
@@ -68,7 +68,7 @@ useHead({
   title,
   meta: [{
     name: 'description',
-    content: description,
+    content: description
   }]
 })
 </script>

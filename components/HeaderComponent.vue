@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const config = useRuntimeConfig()
 import { type DrinkFullData } from '@/types'
+const config = useRuntimeConfig()
 const search = ref('')
 const searchResult = ref()
 const isMobile = computed(() => window.innerWidth > 480)
@@ -18,7 +18,7 @@ function drinkSearch () {
 async function handleSearch () {
   const { data: itemDrink } = await useFetch(`/search.php?s=${search.value}`, {
     baseURL: config.public.apiBase,
-    transform: (response: DrinkFullData) => response.drinks,
+    transform: (response: DrinkFullData) => response.drinks
   })
 
   searchResult.value = itemDrink.value
@@ -36,11 +36,13 @@ async function handleSearch () {
       <input v-model="search" class="input" placeholder="Search" @input="drinkSearch">
       <session v-if="search" class="block" @click="search=''">
         <div class="block__list">
-          <ul v-if="searchResult" v-for="i in searchResult" :key="i">
-            <NuxtLink :to="`/item/${i.idDrink}`">
-              <li>{{ i.strDrink }}</li>
-            </NuxtLink>
-          </ul>
+          <span v-if="searchResult">
+            <ul v-for="i in searchResult" :key="i.idDrink">
+              <NuxtLink :to="`/item/${i.idDrink}`">
+                <li>{{ i.strDrink }}</li>
+              </NuxtLink>
+            </ul>
+          </span>
           <div v-else class="block__list__empty">
             <span class="material-symbols-outlined">
               search_off

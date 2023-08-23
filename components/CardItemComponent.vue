@@ -14,7 +14,9 @@ function isDrinkInFavorites (drink: Drink): boolean {
   return favorite.value.drinks.some(d => d.idDrink === drink.idDrink)
 }
 
-if (props.drink) isFavorite.value = isDrinkInFavorites(props.drink)
+if (props.drink) {
+  isFavorite.value = isDrinkInFavorites(props.drink)
+}
 </script>
 
 <template>

@@ -1,17 +1,17 @@
 <script lang="ts" setup>
-const config = useRuntimeConfig()
 import type { DrinkData } from 'types'
+const config = useRuntimeConfig()
 
-const { data: drinks } = await useFetch(`/filter.php?a=Non_Alcoholic`, {
+const { data: drinks } = await useFetch('/filter.php?a=Non_Alcoholic', {
   baseURL: config.public.apiBase,
-  transform: (response: DrinkData) => response.drinks,
+  transform: (response: DrinkData) => response.drinks
 })
 
 if (!drinks.value) {
   throw createError({
     statusCode: 404,
     statusMessage: 'Error in the request',
-    fatal: true,
+    fatal: true
   })
 }
 
@@ -22,7 +22,7 @@ useHead({
   title,
   meta: [{
     name: 'description',
-    content: description,
+    content: description
   }]
 })
 const drinkPartial = drinks.value?.slice(0, 5)
