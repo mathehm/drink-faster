@@ -1,8 +1,9 @@
 <script lang="ts" setup>
 import type { DrinkData } from 'types'
 
-const { data: drinks } = await useFetch(`https://thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic`, {
-  transform: (response: DrinkData) => response.drinks
+const { data: drinks } = await useFetch(`/filter.php?a=Non_Alcoholic`, {
+  baseURL: process.env.BASE_URL,
+  transform: (response: DrinkData) => response.drinks,
 })
 
 const drinkPartial = drinks.value?.slice(0, 5)

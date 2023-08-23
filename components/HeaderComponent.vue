@@ -15,8 +15,9 @@ function drinkSearch () {
 }
 
 async function handleSearch () {
-  const { data: itemDrink } = await useFetch(`https://thecocktaildb.com/api/json/v1/1/search.php?s=${search.value}`, {
-    transform: (response: DrinkFullData) => response.drinks
+  const { data: itemDrink } = await useFetch(`/search.php?s=${search.value}`, {
+    baseURL: process.env.BASE_URL,
+    transform: (response: DrinkFullData) => response.drinks,
   })
 
   searchResult.value = itemDrink.value

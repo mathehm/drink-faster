@@ -3,8 +3,9 @@ import { type DrinkData } from '@/types'
 const route = useRoute()
 const category = route.params.name
 
-const { data: itemDrink } = await useFetch(`https://thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`, {
-  transform: (response: DrinkData) => response.drinks
+const { data: itemDrink } = await useFetch(`/filter.php?c=${category}`, {
+  baseURL: process.env.BASE_URL,
+  transform: (response: DrinkData) => response.drinks,
 })
 </script>
 

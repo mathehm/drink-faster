@@ -5,8 +5,9 @@ const route = useRoute()
 const id = route.params.id
 const isFavorite = ref(false)
 
-const { data: itemDrink } = await useFetch(`https://thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`, {
-  transform: (response: DrinkFullData) => response.drinks[0]
+const { data: itemDrink } = await useFetch(`/lookup.php?i=${id}`, {
+  baseURL: process.env.BASE_URL,
+  transform: (response: DrinkFullData) => response.drinks[0],
 })
 
 function isDrinkInFavorites (drink: DrinkFull): boolean {
