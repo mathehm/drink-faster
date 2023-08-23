@@ -20,7 +20,7 @@ if (props.drink) {
 </script>
 
 <template>
-  <NuxtLink :to="`/item/${drink.idDrink}`">
+  <NuxtLink :to="`/item/${drink?.idDrink}`">
     <div class="card">
       <div v-if="isFavorite" class="card__favorite">
         <span class="material-symbols-outlined">
@@ -28,10 +28,10 @@ if (props.drink) {
         </span>
       </div>
       <div class="card__image">
-        <img class="image" :src="drink.strDrinkThumb" :alt="drink.strDrink">
+        <img class="image" :src="drink?.strDrinkThumb" :alt="drink?.strDrink">
       </div>
       <p class="card__title">
-        {{ drink.strDrink }}
+        {{ drink?.strDrink }}
       </p>
     </div>
   </NuxtLink>

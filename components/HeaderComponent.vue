@@ -3,7 +3,7 @@ import { type DrinkFullData } from '@/types'
 const config = useRuntimeConfig()
 const search = ref('')
 const searchResult = ref()
-const isMobile = computed(() => window.innerWidth > 480)
+const isDesktopView = computed(() => window.innerWidth > 480)
 
 function drinkSearch () {
   /* eslint prefer-const: ["error", { ignoreReadBeforeAssign: true }] */
@@ -55,7 +55,7 @@ async function handleSearch () {
       <span class="material-symbols-outlined">
         favorite
       </span>
-      <span v-if="isMobile">
+      <span v-if="isDesktopView">
         Favorites
       </span>
     </NuxtLink>
