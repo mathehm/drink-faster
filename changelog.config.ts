@@ -64,7 +64,7 @@ module.exports = {
       body: 'Provide a longer description of the change:\n ',
       breaking: 'List any breaking changes:\n',
       footer: 'Issues this commit closes, e.g #123:',
-      confirmCommit: 'The packages that this commit has affected\n',
-    },
+      confirmCommit: 'The packages that this commit has affected\n'
+    }
   }
-};
+}

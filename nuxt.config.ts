@@ -11,30 +11,30 @@ export default defineNuxtConfig({
           @import "@/assets/scss/_global.scss";
           @import "@/assets/scss/_breakpoints.scss";
           @import "@/assets/scss/_transitions.scss";
-          `,
-        },
-      },
-    },
+          `
+        }
+      }
+    }
   },
   app: {
     head: {
       htmlAttrs: {
-        lang: 'pt-BR',
+        lang: 'pt-BR'
       },
       link: [
         {
           rel: 'stylesheet',
           type: 'text/css',
-          href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined',
+          href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined'
         },
         {
           rel: 'stylesheet',
           type: 'text/css',
-          href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
-        },
-      ],
+          href: 'https://fonts.googleapis.com/icon?family=Material+Icons'
+        }
+      ]
     },
-    pageTransition: { name: 'fade', mode: 'out-in' },
+    pageTransition: { name: 'fade', mode: 'out-in' }
   },
-  ssr: false,
+  ssr: false
 })
