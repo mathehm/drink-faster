@@ -23,6 +23,27 @@ Project to be submitted for the position of Frontend developer at Faster. To tes
  - UX agradável; ✅
  - Criar commits semânticos. ✅
 
+## My challenge development
+
+#### first I created a wireframe and survey of what needed to be done
+
+<img src="./public/wireframe.png" />
+
+#### Comments
+ - I carried out the development based on the company's color palette to be better contextualized;
+ - I would have liked to include the I18n for internationalization, but with the delivery time it was not possible;
+  - Added Commitizen to help with commits;
+  - Added a Github actions configuration to trigger tests on Pull requests
+
+### Build Vercel
+#### https://drink-faster.vercel.app/
+
+### Videos showing some of the project
+#### <a href="https://www.loom.com/share/1769b44e17a74b489675b4a006a0f92c?sid=f96a6b6f-5cd3-4741-9be6-aa9c9115dfdd" rel="stylesheet">Desktop</a>
+
+#### <a href="https://www.loom.com/share/f5a8b6689f624138a4438c25298265e1?sid=124a3745-801c-4fdb-906f-dfc86216b48f">Mobile</a>
+
+
 ## API Reference - [Thecocktaildb](https://www.thecocktaildb.com/api.php)
 
 #### List category
