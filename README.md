@@ -23,7 +23,6 @@ Project to be submitted for the position of Frontend developer at Faster. To tes
  - UX agradável; ✅
  - Criar commits semânticos. ✅
 
-
 ## API Reference - [Thecocktaildb](https://www.thecocktaildb.com/api.php)
 
 #### List category
@@ -44,7 +43,6 @@ Project to be submitted for the position of Frontend developer at Faster. To tes
   GET https://thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic
 ```
 
-
 #### Get drink
 
 ```http
@@ -56,7 +54,6 @@ Project to be submitted for the position of Frontend developer at Faster. To tes
 ```http
   GET https://thecocktaildb.com/api/json/v1/1/search.php?s=${search.value}
 ```
-
 
 ## Setup
 
