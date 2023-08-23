@@ -12,9 +12,15 @@
     "@nuxt/devtools": "latest",
     "@types/node": "^18.17.3",
     "nuxt": "^3.6.5",
-    "sass-loader": "^13.3.2"
+    "sass-loader": "^13.3.2",
+    "git-cz": "^4.9.0"
   },
   "dependencies": {
     "sass": "^1.66.1"
-  }
+  },
+  "config" : {
+    "commitizen" : {
+      "path" : " git-cz "
+   }
+ }
 }
