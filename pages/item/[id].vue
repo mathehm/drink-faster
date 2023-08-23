@@ -60,6 +60,17 @@ if (itemDrink.value && itemDrink.value.idDrink) {
   const drink = itemDrink.value
   isFavorite.value = isDrinkInFavorites(drink)
 }
+
+const title = itemDrink.value?.strDrink ?? ''
+const description = itemDrink.value?.strInstructions ?? ''
+
+useHead({
+  title,
+  meta: [{
+    name: 'description',
+    content: description,
+  }]
+})
 </script>
 
 <template>

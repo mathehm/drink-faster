@@ -16,6 +16,17 @@ if (!drinksCategory.value) {
     fatal: true,
   })
 }
+
+const title = category ? category.toString() : ''
+const description = category ? category.toString() : ''
+
+useHead({
+  title,
+  meta: [{
+    name: 'description',
+    content: description,
+  }]
+})
 </script>
 
 <template>

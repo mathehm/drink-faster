@@ -15,6 +15,16 @@ if (!drinks.value) {
   })
 }
 
+const title = 'Drink Faster'
+const description = 'Drink Faster project'
+
+useHead({
+  title,
+  meta: [{
+    name: 'description',
+    content: description,
+  }]
+})
 const drinkPartial = drinks.value?.slice(0, 5)
 </script>
 

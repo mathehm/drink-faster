@@ -1,6 +1,17 @@
 <script lang="ts" setup>
 const favorite = useFavorite()
 const drinks = favorite.value.drinks
+
+const title = 'Favorite'
+const description = 'Favorite drinks'
+
+useHead({
+  title,
+  meta: [{
+    name: 'description',
+    content: description,
+  }]
+})
 </script>
 
 <template>
