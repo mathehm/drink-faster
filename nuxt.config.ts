@@ -4,6 +4,11 @@ export default defineNuxtConfig({
   modules: [
     'vue3-carousel-nuxt'
   ],
+  runtimeConfig: {
+    public: {
+      apiBase: 'https://thecocktaildb.com/api/json/v1/1'
+    }
+  },
   vite: {
     css: {
       preprocessorOptions: {

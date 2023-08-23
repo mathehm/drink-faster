@@ -1,10 +1,19 @@
 <script lang="ts" setup>
+const config = useRuntimeConfig()
 import type { DrinkData } from 'types'
 
 const { data: drinks } = await useFetch(`/filter.php?a=Non_Alcoholic`, {
-  baseURL: process.env.BASE_URL,
+  baseURL: config.public.apiBase,
   transform: (response: DrinkData) => response.drinks,
 })
+
+if (!drinks.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Error in the request',
+    fatal: true,
+  })
+}
 
 const drinkPartial = drinks.value?.slice(0, 5)
 </script>

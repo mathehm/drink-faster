@@ -1,14 +1,24 @@
 <script setup lang="ts">
+const config = useRuntimeConfig()
 import type { DrinkFullData, DrinkFull } from 'types'
 const favorite = useFavorite()
 const route = useRoute()
 const id = route.params.id
 const isFavorite = ref(false)
 
-const { data: itemDrink } = await useFetch(`/lookup.php?i=${id}`, {
-  baseURL: process.env.BASE_URL,
+const { data: itemDrink } = await useFetch(`lookup.php?i=${id}`, {
+  baseURL: config.public.apiBase,
+  key: id.toString(),
   transform: (response: DrinkFullData) => response.drinks[0],
 })
+
+if (!itemDrink.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Error in the request',
+    fatal: true,
+  })
+}
 
 function isDrinkInFavorites (drink: DrinkFull): boolean {
   return favorite.value.drinks.some(d => d.idDrink === drink.idDrink)

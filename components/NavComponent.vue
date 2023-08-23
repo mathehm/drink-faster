@@ -1,11 +1,12 @@
 <script setup lang="ts">
+const config = useRuntimeConfig()
 import { type DrinkCategoriesResponse } from '@/types'
 const showAllCategories = ref(false)
 const menusFit = Math.floor(window.innerWidth / 200) - 1
 const partialCategories = computed(() => fullCategories.value?.slice(0, menusFit))
 
 const { data: fullCategories } = await useFetch('/list.php?c=list', {
-  baseURL: process.env.BASE_URL,
+  baseURL: config.public.apiBase,
   transform: (response: DrinkCategoriesResponse) => response.drinks,
 })
 </script>

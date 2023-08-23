@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const config = useRuntimeConfig()
 import { type DrinkFullData } from '@/types'
 const search = ref('')
 const searchResult = ref()
@@ -16,7 +17,7 @@ function drinkSearch () {
 
 async function handleSearch () {
   const { data: itemDrink } = await useFetch(`/search.php?s=${search.value}`, {
-    baseURL: process.env.BASE_URL,
+    baseURL: config.public.apiBase,
     transform: (response: DrinkFullData) => response.drinks,
   })
 
